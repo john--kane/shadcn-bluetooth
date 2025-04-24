@@ -8,7 +8,7 @@
       "type": "registry:component",
       "title": "Bluetooth",
       "description": "A simple bluetooth component",
-      "registryDependencies": ["button", "card", "input", "label", "textarea", "badge", "scroll-area", "select", "tooltip"],
+      "registryDependencies": ["accordion", "alert", "badge", "button", "card", "input", "label", "progress", "scroll-area", "select", "tooltip", "textarea"],
       "files": [
 
         {
