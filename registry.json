@@ -4,42 +4,95 @@
   "homepage": "https://github.com/john--kane",
   "items": [
     {
-      "name": "bluetooth",
+      "name": "bluetooth-connection-panel",
       "type": "registry:component",
-      "title": "Bluetooth",
-      "description": "A simple bluetooth component",
+      "title": "Bluetooth Connection Panel",
+      "description": "Display a panel of bluetooth devices and their status.",
       "registryDependencies": ["accordion", "alert", "badge", "button", "card", "input", "label", "progress", "scroll-area", "select", "tooltip", "textarea"],
       "files": [
-
         {
           "path": "registry/new-york/blocks/bluetooth/bluetooth-connection-panel.tsx",
           "type": "registry:component"
-        },
+        }
+      ]
+    },
+    {
+      "name": "bluetooth-device-card",
+      "type": "registry:component",
+      "title": "Bluetooth Device Card",
+      "description": "Display a card of bluetooth device information.",
+      "registryDependencies": ["accordion", "alert", "badge", "button", "card", "input", "label", "progress", "scroll-area", "select", "tooltip", "textarea"],
+      "files": [
         {
-          "path": "registry/new-york/blocks/bluetooth/bluetooth-device-card.tsx", 
+          "path": "registry/new-york/blocks/bluetooth/bluetooth-device-card.tsx",
           "type": "registry:component"
-        },
+        }
+      ]
+    },
+    {
+      "name": "bluetooth-device-information",
+      "type": "registry:component",
+      "title": "Bluetooth Device Information",
+      "description": "Display a list of bluetooth device information.",
+      "registryDependencies": ["accordion", "alert", "badge", "button", "card", "input", "label", "progress", "scroll-area", "select", "tooltip", "textarea"],
+      "files": [
         {
           "path": "registry/new-york/blocks/bluetooth/bluetooth-device-information.tsx",
           "type": "registry:component"
-        },
+        }
+      ]
+    },
+    {
+      "name": "bluetooth-device-list",
+      "type": "registry:component",
+      "title": "Bluetooth Device List",
+      "description": "Display a list of bluetooth device information.",
+      "registryDependencies": ["accordion", "alert", "badge", "button", "card", "input", "label", "progress", "scroll-area", "select", "tooltip", "textarea"],
+      "files": [
         {
-          "path": "registry/new-york/blocks/bluetooth/bluetooth-device-list.tsx", 
+          "path": "registry/new-york/blocks/bluetooth/bluetooth-device-list.tsx",
           "type": "registry:component"
-        },
+        }
+      ]
+    },
+    {
+      "name": "bluetooth-log-console",
+      "type": "registry:component",
+      "title": "Bluetooth Log Console",
+      "description": "Display a log console of bluetooth device information.",
+      "registryDependencies": ["accordion", "alert", "badge", "button", "card", "input", "label", "progress", "scroll-area", "select", "tooltip", "textarea"],
+      "files": [
         {
-          "path": "registry/new-york/blocks/bluetooth/bluetooth-log-console.tsx", 
+          "path": "registry/new-york/blocks/bluetooth/bluetooth-log-console.tsx",
           "type": "registry:component"
-        },
+        }
+      ]
+    },
+
+    {
+      "name": "bluetooth-status",
+      "type": "registry:component",
+      "title": "Bluetooth Status",
+      "description": "Display a status of bluetooth device information.",
+      "registryDependencies": ["accordion", "alert", "badge", "button", "card", "input", "label", "progress", "scroll-area", "select", "tooltip", "textarea"],
+      "files": [
         {
           "path": "registry/new-york/blocks/bluetooth/bluetooth-status.tsx",
           "type": "registry:component"
-        },
+        }
+      ]
+    },
+    {
+      "name": "bluetooth-toolbar",
+      "type": "registry:component",
+      "title": "Bluetooth Toolbar",
+      "description": "Display a toolbar of bluetooth device information.",
+      "registryDependencies": ["accordion", "alert", "badge", "button", "card", "input", "label", "progress", "scroll-area", "select", "tooltip", "textarea"],
+      "files": [
         {
           "path": "registry/new-york/blocks/bluetooth/bluetooth-toolbar.tsx",
           "type": "registry:component"
         }
-        
       ]
     }
 

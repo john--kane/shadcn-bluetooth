@@ -1,0 +1,28 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "bluetooth-toolbar",
+  "type": "registry:component",
+  "title": "Bluetooth Toolbar",
+  "description": "Display a toolbar of bluetooth device information.",
+  "registryDependencies": [
+    "accordion",
+    "alert",
+    "badge",
+    "button",
+    "card",
+    "input",
+    "label",
+    "progress",
+    "scroll-area",
+    "select",
+    "tooltip",
+    "textarea"
+  ],
+  "files": [
+    {
+      "path": "registry/new-york/blocks/bluetooth/bluetooth-toolbar.tsx",
+      "content": "\"use client\";\n\nimport { useState } from \"react\";\nimport { Button } from \"@/registry/new-york/ui/button\";\nimport { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from \"@/registry/new-york/ui/tooltip\";\nimport { BluetoothManager } from \"./utils\";\nimport { Bluetooth, BluetoothConnected, BluetoothOff, RefreshCw, Scan } from \"lucide-react\";\n\ninterface BluetoothToolbarProps {\n  onError?: (error: Error) => void;\n  onScanStart?: () => void;\n  onScanStop?: () => void;\n}\n\nexport function BluetoothToolbar({\n  onError,\n  onScanStart,\n  onScanStop\n}: BluetoothToolbarProps) {\n  const [isScanning, setIsScanning] = useState(false);\n  const [isRefreshing, setIsRefreshing] = useState(false);\n  const bluetoothManager = BluetoothManager.getInstance();\n\n  const handleScan = async () => {\n    try {\n      setIsScanning(true);\n      onScanStart?.();\n      await bluetoothManager.scanForDevices();\n    } catch (err) {\n      const error = err instanceof Error ? err : new Error(\"Failed to scan for devices\");\n      onError?.(error);\n    } finally {\n      setIsScanning(false);\n      onScanStop?.();\n    }\n  };\n\n  const handleRefresh = async () => {\n    try {\n      setIsRefreshing(true);\n      await bluetoothManager.refreshDevices();\n    } catch (err) {\n      const error = err instanceof Error ? err : new Error(\"Failed to refresh devices\");\n      onError?.(error);\n    } finally {\n      setIsRefreshing(false);\n    }\n  };\n\n  const handleDisconnectAll = async () => {\n    try {\n      const devices = bluetoothManager.getDevices();\n      for (const device of devices) {\n        if (device.isConnected) {\n          await bluetoothManager.disconnectDevice(device.id);\n        }\n      }\n    } catch (err) {\n      const error = err instanceof Error ? err : new Error(\"Failed to disconnect devices\");\n      onError?.(error);\n    }\n  };\n\n  return (\n    <div className=\"flex items-center justify-between p-2 border rounded-md\">\n      <div className=\"flex items-center gap-2\">\n        <TooltipProvider>\n          <Tooltip>\n            <TooltipTrigger asChild>\n              <Button\n                variant=\"outline\"\n                size=\"icon\"\n                onClick={handleScan}\n                disabled={isScanning}\n              >\n                <Scan className={`h-4 w-4 ${isScanning ? \"animate-spin\" : \"\"}`} />\n              </Button>\n            </TooltipTrigger>\n            <TooltipContent>\n              <p>Scan for devices</p>\n            </TooltipContent>\n          </Tooltip>\n\n          <Tooltip>\n            <TooltipTrigger asChild>\n              <Button\n                variant=\"outline\"\n                size=\"icon\"\n                onClick={handleRefresh}\n                disabled={isRefreshing}\n              >\n                <RefreshCw className={`h-4 w-4 ${isRefreshing ? \"animate-spin\" : \"\"}`} />\n              </Button>\n            </TooltipTrigger>\n            <TooltipContent>\n              <p>Refresh device list</p>\n            </TooltipContent>\n          </Tooltip>\n\n          <Tooltip>\n            <TooltipTrigger asChild>\n              <Button\n                variant=\"outline\"\n                size=\"icon\"\n                onClick={handleDisconnectAll}\n              >\n                <BluetoothOff className=\"h-4 w-4\" />\n              </Button>\n            </TooltipTrigger>\n            <TooltipContent>\n              <p>Disconnect all devices</p>\n            </TooltipContent>\n          </Tooltip>\n        </TooltipProvider>\n      </div>\n      <div className=\"flex items-center gap-2\">\n        {bluetoothManager.getDevices().filter(device => device.isConnected).length > 0 && (\n          <span className=\"text-sm text-muted-foreground\">\n            {bluetoothManager.getDevices().filter(device => device.isConnected).length} device{bluetoothManager.getDevices().filter(device => device.isConnected).length !== 1 ? 's' : ''} connected\n          </span>\n        )}\n      </div>\n    </div>\n  );\n}\n",
+      "type": "registry:component"
+    }
+  ]
+}

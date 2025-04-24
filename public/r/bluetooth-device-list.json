@@ -1,0 +1,28 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "bluetooth-device-list",
+  "type": "registry:component",
+  "title": "Bluetooth Device List",
+  "description": "Display a list of bluetooth device information.",
+  "registryDependencies": [
+    "accordion",
+    "alert",
+    "badge",
+    "button",
+    "card",
+    "input",
+    "label",
+    "progress",
+    "scroll-area",
+    "select",
+    "tooltip",
+    "textarea"
+  ],
+  "files": [
+    {
+      "path": "registry/new-york/blocks/bluetooth/bluetooth-device-list.tsx",
+      "content": "\"use client\";\n\nimport { useEffect, useState } from \"react\";\nimport { Card, CardContent, CardHeader, CardTitle } from \"@/registry/new-york/ui/card\";\nimport { ScrollArea } from \"@/registry/new-york/ui/scroll-area\";\nimport { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from \"@/registry/new-york/ui/select\";\nimport { BluetoothManager, BluetoothDevice } from \"./utils\";\nimport { BluetoothDeviceCard } from \"./bluetooth-device-card\";\nimport { BluetoothToolbar } from \"./bluetooth-toolbar\";\nimport { AlertCircle } from \"lucide-react\";\nimport { BluetoothDeviceInformation } from \"./bluetooth-device-information\";\n\ntype DeviceFilter = \"all\" | \"connected\" | \"paired\";\n\ninterface BluetoothDeviceListProps {\n  onDeviceSelected?: (device: BluetoothDevice) => void;\n  onDeviceRemoved?: (device: BluetoothDevice) => void;\n  onError?: (error: Error) => void;\n}\n\nexport function BluetoothDeviceList({\n  onDeviceSelected,\n  onDeviceRemoved,\n  onError\n}: BluetoothDeviceListProps) {\n  const [devices, setDevices] = useState<BluetoothDevice[]>([]);\n  const [isAvailable, setIsAvailable] = useState<boolean>(false);\n  const [error, setError] = useState<string | null>(null);\n  const [filter, setFilter] = useState<DeviceFilter>(\"all\");\n  const bluetoothManager = BluetoothManager.getInstance();\n\n  useEffect(() => {\n    const checkAvailability = async () => {\n      try {\n        const available = await bluetoothManager.isBluetoothAvailable();\n        setIsAvailable(available);\n        if (!available) {\n          setError(\"Bluetooth is not available on this device\");\n        }\n      } catch (err) {\n        const error = err instanceof Error ? err : new Error(\"Failed to check Bluetooth availability\");\n        setError(error.message);\n        onError?.(error);\n      }\n    };\n\n    checkAvailability();\n  }, []);\n\n  useEffect(() => {\n    const handleDevicesChanged = (newDevices: BluetoothDevice[]) => {\n      setDevices([...newDevices]);\n    };\n\n    const handleError = (error: Error) => {\n      setError(error.message);\n      onError?.(error);\n    };\n\n    bluetoothManager.addListener('devicesChanged', handleDevicesChanged);\n    bluetoothManager.addListener('error', handleError);\n\n    // Load initial devices\n    const initialDevices = bluetoothManager.getDevices();\n    setDevices(initialDevices);\n\n    return () => {\n      bluetoothManager.removeListener('devicesChanged', handleDevicesChanged);\n      bluetoothManager.removeListener('error', handleError);\n    };\n  }, []);\n\n  const filteredDevices = devices.filter(device => {\n    switch (filter) {\n      case \"connected\":\n        return device.isConnected;\n      case \"paired\":\n        return !device.isConnected;\n      default:\n        return true;\n    }\n  });\n\n  return (\n    <Card className=\"w-full\">\n      <CardHeader>\n        <div className=\"flex items-center justify-between\">\n          <CardTitle>Bluetooth Devices</CardTitle>\n          <div className=\"flex items-center gap-2\">\n            <Select value={filter} onValueChange={(value: DeviceFilter) => setFilter(value)}>\n              <SelectTrigger className=\"w-[180px]\">\n                <SelectValue placeholder=\"Filter devices\" />\n              </SelectTrigger>\n              <SelectContent>\n                <SelectItem value=\"all\">All Devices</SelectItem>\n                <SelectItem value=\"connected\">Connected</SelectItem>\n                <SelectItem value=\"paired\">Paired</SelectItem>\n              </SelectContent>\n            </Select>\n          </div>\n        </div>\n      </CardHeader>\n      <CardContent className=\"space-y-4\">\n        <BluetoothToolbar\n          onError={onError}\n          onScanStart={() => setError(null)}\n          onScanStop={() => setError(null)}\n        />\n\n        {error && (\n          <div className=\"flex items-center gap-2 text-sm text-red-500\">\n            <AlertCircle className=\"h-4 w-4\" />\n            {error}\n          </div>\n        )}\n\n        {filteredDevices.length > 0 ? (\n          <div className=\"space-y-2\">\n            {filteredDevices.map((device) => (\n              <div key={device.id} className=\"space-y-4\">\n                <BluetoothDeviceCard\n                  device={device}\n                  onDeviceSelected={onDeviceSelected}\n                  onDeviceRemoved={onDeviceRemoved}\n                  onError={onError}\n                />\n              </div>\n            ))}\n          </div>\n        ) : (\n          <div className=\"text-center text-muted-foreground py-4\">\n            {devices.length === 0 ? \"No devices paired yet\" : \"No devices match the current filter\"}\n          </div>\n        )}\n      </CardContent>\n    </Card>\n  );\n} ",
+      "type": "registry:component"
+    }
+  ]
+}

@@ -1,0 +1,28 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "bluetooth-device-information",
+  "type": "registry:component",
+  "title": "Bluetooth Device Information",
+  "description": "Display a list of bluetooth device information.",
+  "registryDependencies": [
+    "accordion",
+    "alert",
+    "badge",
+    "button",
+    "card",
+    "input",
+    "label",
+    "progress",
+    "scroll-area",
+    "select",
+    "tooltip",
+    "textarea"
+  ],
+  "files": [
+    {
+      "path": "registry/new-york/blocks/bluetooth/bluetooth-device-information.tsx",
+      "content": "\"use client\";\n\nimport { useEffect, useState } from \"react\";\nimport { Card, CardContent, CardHeader, CardTitle } from \"@/registry/new-york/ui/card\";\nimport { BluetoothManager, BluetoothDevice, DeviceInformation } from \"./utils\";\nimport { Battery, Info, RefreshCw } from \"lucide-react\";\nimport { Button } from \"@/registry/new-york/ui/button\";\nimport { Progress } from \"@radix-ui/react-progress\";\n\ninterface BluetoothDeviceInformationProps {\n  device: BluetoothDevice;\n}\n\nexport function BluetoothDeviceInformation({ device }: BluetoothDeviceInformationProps) {\n  const [deviceInfo, setDeviceInfo] = useState<DeviceInformation | null>(null);\n  const [batteryLevel, setBatteryLevel] = useState<number | null>(null);\n  const [isLoading, setIsLoading] = useState(false);\n  const bluetoothManager = BluetoothManager.getInstance();\n\n  const refreshDeviceInfo = async () => {\n    if (!device.gatt) return;\n    \n    setIsLoading(true);\n    try {\n      const [info, battery] = await Promise.all([\n        bluetoothManager.readDeviceInformation(device),\n        bluetoothManager.readBatteryLevel(device)\n      ]);\n      setDeviceInfo(info);\n      setBatteryLevel(battery);\n    } catch (error) {\n      console.error('Failed to refresh device information:', error);\n    } finally {\n      setIsLoading(false);\n    }\n  };\n\n  useEffect(() => {\n    refreshDeviceInfo();\n  }, [device]);\n\n  if (!device.gatt) {\n    return null;\n  }\n\n  return (\n    <Card className=\"w-full\">\n      <CardHeader className=\"flex flex-row items-center justify-between space-y-0 pb-2\">\n        <CardTitle className=\"text-sm font-medium\">Device Information</CardTitle>\n        <Button\n          variant=\"ghost\"\n          size=\"sm\"\n          onClick={refreshDeviceInfo}\n          disabled={isLoading}\n        >\n          <RefreshCw className={`h-4 w-4 ${isLoading ? 'animate-spin' : ''}`} />\n        </Button>\n      </CardHeader>\n      <CardContent>\n        <div className=\"space-y-4\">\n          {batteryLevel !== null && (\n            <div className=\"space-y-2\">\n              <div className=\"flex items-center gap-2 text-sm\">\n                <Battery className=\"h-4 w-4\" />\n                <span>Battery Level</span>\n                <span className=\"ml-auto font-medium\">{batteryLevel}%</span>\n              </div>\n              <Progress value={batteryLevel} className=\"h-2\" />\n            </div>\n          )}\n\n          {deviceInfo && (\n            <div className=\"space-y-2\">\n              <div className=\"flex items-center gap-2 text-sm text-muted-foreground\">\n                <Info className=\"h-4 w-4\" />\n                <span>Device Details</span>\n              </div>\n              <div className=\"grid gap-2 text-sm\">\n                {deviceInfo.manufacturerName && (\n                  <div className=\"flex justify-between\">\n                    <span className=\"text-muted-foreground\">Manufacturer</span>\n                    <span>{deviceInfo.manufacturerName}</span>\n                  </div>\n                )}\n                {deviceInfo.modelNumber && (\n                  <div className=\"flex justify-between\">\n                    <span className=\"text-muted-foreground\">Model</span>\n                    <span>{deviceInfo.modelNumber}</span>\n                  </div>\n                )}\n                {deviceInfo.serialNumber && (\n                  <div className=\"flex justify-between\">\n                    <span className=\"text-muted-foreground\">Serial Number</span>\n                    <span>{deviceInfo.serialNumber}</span>\n                  </div>\n                )}\n                {deviceInfo.hardwareRevision && (\n                  <div className=\"flex justify-between\">\n                    <span className=\"text-muted-foreground\">Hardware Revision</span>\n                    <span>{deviceInfo.hardwareRevision}</span>\n                  </div>\n                )}\n                {deviceInfo.firmwareRevision && (\n                  <div className=\"flex justify-between\">\n                    <span className=\"text-muted-foreground\">Firmware Revision</span>\n                    <span>{deviceInfo.firmwareRevision}</span>\n                  </div>\n                )}\n                {deviceInfo.softwareRevision && (\n                  <div className=\"flex justify-between\">\n                    <span className=\"text-muted-foreground\">Software Revision</span>\n                    <span>{deviceInfo.softwareRevision}</span>\n                  </div>\n                )}\n              </div>\n            </div>\n          )}\n        </div>\n      </CardContent>\n    </Card>\n  );\n} ",
+      "type": "registry:component"
+    }
+  ]
+}
