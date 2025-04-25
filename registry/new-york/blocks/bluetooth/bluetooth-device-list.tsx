@@ -3,9 +3,9 @@
 import { useEffect, useState } from "react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/registry/new-york/ui/card";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/registry/new-york/ui/select";
-import { BluetoothManager, BluetoothDevice } from "./bluetooth-utils";
-import { BluetoothDeviceCard } from "./bluetooth-device-card";
-import { BluetoothToolbar } from "./bluetooth-toolbar";
+import { BluetoothManager, BluetoothDevice } from "@/registry/new-york/blocks/bluetooth//bluetooth-utils";
+import { BluetoothDeviceCard } from "@/registry/new-york/blocks/bluetooth/bluetooth-device-card";
+import { BluetoothToolbar } from "@/registry/new-york/blocks/bluetooth/bluetooth-toolbar";
 import { AlertCircle } from "lucide-react";
 
 type DeviceFilter = "all" | "connected" | "paired";

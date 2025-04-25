@@ -1,4 +1,4 @@
-import { GATT_SERVICES, GATT_CHARACTERISTICS, GattLookup } from './gatt-services';
+import { GattLookup } from '@/registry/new-york/blocks/bluetooth/gatt-services';
 
 export interface BluetoothDevice {
   id: string;

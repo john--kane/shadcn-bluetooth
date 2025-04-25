@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { BluetoothManager, BluetoothDevice } from "./bluetooth-utils";
+import { BluetoothManager, BluetoothDevice } from "@/registry/new-york/blocks/bluetooth/bluetooth-utils";
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/registry/new-york/ui/tooltip";
 import { Bluetooth, BluetoothOff, BluetoothSearching, BluetoothConnected } from "lucide-react";
 import { cn } from "@/lib/utils";
@@ -66,7 +66,7 @@ export function BluetoothStatus({
       setIsConnected(device.isConnected);
     } else {
       const devices = bluetoothManager.getDevices();
-      setIsConnected(devices.some(device => device.isConnected));
+      setIsConnected(devices.some((device: BluetoothDevice) => device.isConnected));
     }
 
     // Listen for status changes

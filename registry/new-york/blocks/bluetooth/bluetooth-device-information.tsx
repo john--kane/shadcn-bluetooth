@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from "react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/registry/new-york/ui/card";
-import { BluetoothManager, BluetoothDevice, DeviceInformation } from "./bluetooth-utils";
+import { BluetoothManager, BluetoothDevice, DeviceInformation } from "@/registry/new-york/blocks/bluetooth/bluetooth-utils";
 import { Battery, Info, RefreshCw } from "lucide-react";
 import { Button } from "@/registry/new-york/ui/button";
 import { Progress } from "@radix-ui/react-progress";
