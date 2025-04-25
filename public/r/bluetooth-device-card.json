@@ -5,18 +5,9 @@
   "title": "Bluetooth Device Card",
   "description": "Display a card of bluetooth device information.",
   "registryDependencies": [
-    "accordion",
-    "alert",
-    "badge",
     "button",
-    "card",
-    "input",
-    "label",
     "progress",
-    "scroll-area",
-    "select",
-    "tooltip",
-    "textarea"
+    "tooltip"
   ],
   "files": [
     {

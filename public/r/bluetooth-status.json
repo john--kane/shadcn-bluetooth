@@ -5,18 +5,7 @@
   "title": "Bluetooth Status",
   "description": "Display a status of bluetooth device information.",
   "registryDependencies": [
-    "accordion",
-    "alert",
-    "badge",
-    "button",
-    "card",
-    "input",
-    "label",
-    "progress",
-    "scroll-area",
-    "select",
-    "tooltip",
-    "textarea"
+    "tooltip"
   ],
   "files": [
     {

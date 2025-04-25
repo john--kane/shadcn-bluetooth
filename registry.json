@@ -8,7 +8,7 @@
       "type": "registry:component",
       "title": "Bluetooth Connection Panel",
       "description": "Display a panel of bluetooth devices and their status.",
-      "registryDependencies": ["accordion", "alert", "badge", "button", "card", "input", "label", "progress", "scroll-area", "select", "tooltip", "textarea"],
+      "registryDependencies": ["card", "scroll-area", "button", "input", "label"],
       "files": [
         {
           "path": "registry/new-york/blocks/bluetooth/bluetooth-connection-panel.tsx",
@@ -21,7 +21,7 @@
       "type": "registry:component",
       "title": "Bluetooth Device Card",
       "description": "Display a card of bluetooth device information.",
-      "registryDependencies": ["accordion", "alert", "badge", "button", "card", "input", "label", "progress", "scroll-area", "select", "tooltip", "textarea"],
+      "registryDependencies": ["button", "progress", "tooltip"],
       "files": [
         {
           "path": "registry/new-york/blocks/bluetooth/bluetooth-device-card.tsx",
@@ -34,7 +34,7 @@
       "type": "registry:component",
       "title": "Bluetooth Device Information",
       "description": "Display a list of bluetooth device information.",
-      "registryDependencies": ["accordion", "alert", "badge", "button", "card", "input", "label", "progress", "scroll-area", "select", "tooltip", "textarea"],
+      "registryDependencies": ["card", "button", "progress"],
       "files": [
         {
           "path": "registry/new-york/blocks/bluetooth/bluetooth-device-information.tsx",
@@ -47,7 +47,7 @@
       "type": "registry:component",
       "title": "Bluetooth Device List",
       "description": "Display a list of bluetooth device information.",
-      "registryDependencies": ["accordion", "alert", "badge", "button", "card", "input", "label", "progress", "scroll-area", "select", "tooltip", "textarea"],
+      "registryDependencies": ["card", "select", "bluetooth-device-card", "bluetooth-toolbar"],
       "files": [
         {
           "path": "registry/new-york/blocks/bluetooth/bluetooth-device-list.tsx",
@@ -60,7 +60,7 @@
       "type": "registry:component",
       "title": "Bluetooth Log Console",
       "description": "Display a log console of bluetooth device information.",
-      "registryDependencies": ["accordion", "alert", "badge", "button", "card", "input", "label", "progress", "scroll-area", "select", "tooltip", "textarea"],
+      "registryDependencies": ["card", "scroll-area", "button"],
       "files": [
         {
           "path": "registry/new-york/blocks/bluetooth/bluetooth-log-console.tsx",
@@ -74,7 +74,7 @@
       "type": "registry:component",
       "title": "Bluetooth Status",
       "description": "Display a status of bluetooth device information.",
-      "registryDependencies": ["accordion", "alert", "badge", "button", "card", "input", "label", "progress", "scroll-area", "select", "tooltip", "textarea"],
+      "registryDependencies": ["tooltip"],
       "files": [
         {
           "path": "registry/new-york/blocks/bluetooth/bluetooth-status.tsx",
@@ -87,7 +87,7 @@
       "type": "registry:component",
       "title": "Bluetooth Toolbar",
       "description": "Display a toolbar of bluetooth device information.",
-      "registryDependencies": ["accordion", "alert", "badge", "button", "card", "input", "label", "progress", "scroll-area", "select", "tooltip", "textarea"],
+      "registryDependencies": ["button", "tooltip"],
       "files": [
         {
           "path": "registry/new-york/blocks/bluetooth/bluetooth-toolbar.tsx",

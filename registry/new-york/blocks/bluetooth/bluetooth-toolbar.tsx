@@ -1,10 +1,10 @@
 "use client";
 
-import { useState } from "react";
 import { Button } from "@/registry/new-york/ui/button";
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/registry/new-york/ui/tooltip";
+import { BluetoothOff, RefreshCw, Scan } from "lucide-react";
+import { useState } from "react";
 import { BluetoothManager } from "./utils";
-import { Bluetooth, BluetoothConnected, BluetoothOff, RefreshCw, Scan } from "lucide-react";
 
 interface BluetoothToolbarProps {
   onError?: (error: Error) => void;

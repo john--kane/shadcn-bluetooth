@@ -68,7 +68,10 @@ type EventType =
   | 'devicePaired'
   | 'connectError'
   | 'disconnectError'
-  | 'removeError';
+  | 'removeError'
+  | 'serviceDiscovered'
+  | 'serviceError'
+  | 'characteristicError';
 
 type EventCallback = (data: any) => void;
 

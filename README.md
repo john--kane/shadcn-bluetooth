@@ -1,23 +1,80 @@
-# registry-template
+# Shadcn-Bluetooth
+v0.0.1
 
-You can use the `shadcn` CLI to run your own component registry. Running your own
-component registry allows you to distribute your custom components, hooks, pages, and
-other files to any React project.
+A collection of shadcn/ui components for building Bluetooth-enabled applications. These components provide a modern and user-friendly interface for managing Bluetooth devices and their connections.
 
-> [!IMPORTANT]  
-> This template uses Tailwind v4. For Tailwind v3, see [registry-template](https://github.com/shadcn-ui/registry-template).
+## Components
 
-## Getting Started
+### Bluetooth Connection Panel
+A comprehensive panel for managing Bluetooth device connections. Features include:
+- Service discovery and listing
+- Characteristic exploration
+- Read/Write operations for device characteristics
+- Real-time connection status monitoring
 
-This is a template for creating a custom registry using Next.js.
+### Bluetooth Device Card
+A card component for displaying individual Bluetooth device information. Features include:
+- Device name and ID display
+- Connection status indicator
+- Connect/Disconnect controls
+- Service and characteristic exploration
+- Battery level monitoring
+- Device information display
 
-- The template uses a `registry.json` file to define components and their files.
-- The `shadcn build` command is used to build the registry.
-- The registry items are served as static files under `public/r/[name].json`.
-- The template also includes a route handler for serving registry items.
-- Every registry item are compatible with the `shadcn` CLI.
-- We have also added v0 integration using the `Open in v0` api.
+### Bluetooth Device Information
+A component for displaying detailed device information. Features include:
+- Manufacturer details
+- Model number
+- Serial number
+- Hardware/Firmware/Software revisions
+- Battery level monitoring with progress bar
+- Real-time information refresh
 
-## Documentation
+### Bluetooth Device List
+A list component for managing multiple Bluetooth devices. Features include:
+- Device filtering (All/Connected/Paired)
+- Device scanning
+- Connection management
+- Error handling
+- Real-time device status updates
 
-Visit the [shadcn documentation](https://ui.shadcn.com/docs/registry) to view the full documentation.
+### Bluetooth Log Console
+A console component for monitoring Bluetooth operations. Features include:
+- Real-time logging of Bluetooth events
+- Color-coded log types (info, error, data, etc.)
+- Auto-scrolling capability
+- Log clearing functionality
+- Timestamp tracking
+- Detailed event data display
+
+### Bluetooth Status
+A status indicator component for Bluetooth connectivity. Features include:
+- Visual status indicators
+- Tooltip information
+- Customizable colors
+- Legend display option
+- Multiple size presets
+- Connection state monitoring
+
+### Bluetooth Toolbar
+A toolbar component for Bluetooth device management. Features include:
+- Device scanning
+- Device list refresh
+- Bulk device disconnection
+- Connected device count display
+- Error handling
+- Tooltip information
+
+## Installation
+
+```bash
+pnpm dlx shadcn add https://shadcn-bluetooth.kaneleuc.com/r/bluetooth-connect-panel.json
+pnpm dlx shadcn add https://shadcn-bluetooth.kaneleuc.com/r/bluetooth-device-card.json
+pnpm dlx shadcn add https://shadcn-bluetooth.kaneleuc.com/r/bluetooth-device-information.json
+pnpm dlx shadcn add https://shadcn-bluetooth.kaneleuc.com/r/bluetooth-device-list.json
+pnpm dlx shadcn add https://shadcn-bluetooth.kaneleuc.com/r/bluetooth-log-console.json
+pnpm dlx shadcn add https://shadcn-bluetooth.kaneleuc.com/r/bluetooth-status.json
+pnpm dlx shadcn add https://shadcn-bluetooth.kaneleuc.com/r/bluetooth-toolbar.json
+```
+
+More coming soon ...

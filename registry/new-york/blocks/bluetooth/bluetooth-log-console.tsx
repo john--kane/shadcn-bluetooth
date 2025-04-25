@@ -1,11 +1,11 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
+import { Button } from "@/registry/new-york/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/registry/new-york/ui/card";
 import { ScrollArea } from "@/registry/new-york/ui/scroll-area";
-import { Button } from "@/registry/new-york/ui/button";
-import { BluetoothManager, BluetoothDevice, Service, Characteristic } from "./utils";
-import { AlertCircle, Battery, Bluetooth, BluetoothConnected, BluetoothOff, ChevronDown, ChevronUp, Info, RefreshCw, Trash2, Wifi, WifiOff } from "lucide-react";
+import { AlertCircle, Battery, Bluetooth, BluetoothConnected, BluetoothOff, Info, RefreshCw, Trash2, Wifi } from "lucide-react";
+import { useEffect, useRef, useState } from "react";
+import { BluetoothDevice, BluetoothManager, Characteristic, Service } from "./utils";
 
 type LogType = "info" | "error" | "data" | "event" | "connection" | "service" | "characteristic" | "connectionError" | "serviceError" | "characteristicError" | "scanError" | "disconnectError" | "removeError";
 
