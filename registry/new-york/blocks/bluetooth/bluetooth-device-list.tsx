@@ -3,7 +3,7 @@
 import { useEffect, useState } from "react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/registry/new-york/ui/card";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/registry/new-york/ui/select";
-import { BluetoothManager, BluetoothDevice } from "./utils";
+import { BluetoothManager, BluetoothDevice } from "./bluetooth-utils";
 import { BluetoothDeviceCard } from "./bluetooth-device-card";
 import { BluetoothToolbar } from "./bluetooth-toolbar";
 import { AlertCircle } from "lucide-react";

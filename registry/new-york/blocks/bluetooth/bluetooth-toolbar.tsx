@@ -4,7 +4,7 @@ import { Button } from "@/registry/new-york/ui/button";
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/registry/new-york/ui/tooltip";
 import { BluetoothOff, RefreshCw, Scan } from "lucide-react";
 import { useState } from "react";
-import { BluetoothManager } from "./utils";
+import { BluetoothManager } from "./bluetooth-utils";
 
 interface BluetoothToolbarProps {
   onError?: (error: Error) => void;

@@ -15,7 +15,7 @@
           "type": "registry:component"
         },
         {
-          "path": "registry/new-york/blocks/bluetooth/utils.ts",
+          "path": "registry/new-york/blocks/bluetooth/bluetooth-utils.ts",
           "type": "registry:lib"
         },
         {
@@ -36,7 +36,7 @@
           "type": "registry:component"
         },
         {
-          "path": "registry/new-york/blocks/bluetooth/utils.ts",
+          "path": "registry/new-york/blocks/bluetooth/bluetooth-utils.ts",
           "type": "registry:lib"
         },
         {
@@ -57,7 +57,7 @@
           "type": "registry:component"
         },
         {
-          "path": "registry/new-york/blocks/bluetooth/utils.ts",
+          "path": "registry/new-york/blocks/bluetooth/bluetooth-utils.ts",
           "type": "registry:lib"
         },
         {
@@ -78,7 +78,7 @@
           "type": "registry:component"
         },
         {
-          "path": "registry/new-york/blocks/bluetooth/utils.ts",
+          "path": "registry/new-york/blocks/bluetooth/bluetooth-utils.ts",
           "type": "registry:lib"
         },
         {
@@ -99,7 +99,7 @@
           "type": "registry:component"
         },
         {
-          "path": "registry/new-york/blocks/bluetooth/utils.ts",
+          "path": "registry/new-york/blocks/bluetooth/bluetooth-utils.ts",
           "type": "registry:lib"
         },
         {
@@ -121,7 +121,7 @@
           "type": "registry:component"
         },
         {
-          "path": "registry/new-york/blocks/bluetooth/utils.ts",
+          "path": "registry/new-york/blocks/bluetooth/bluetooth-utils.ts",
           "type": "registry:lib"
         },
         {
@@ -142,7 +142,7 @@
           "type": "registry:component"
         },
         {
-          "path": "registry/new-york/blocks/bluetooth/utils.ts",
+          "path": "registry/new-york/blocks/bluetooth/bluetooth-utils.ts",
           "type": "registry:lib"
         },
         {

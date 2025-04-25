@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from "react";
 import { Button } from "@/registry/new-york/ui/button";
-import { BluetoothManager, BluetoothDevice, DeviceInformation } from "./utils";
+import { BluetoothManager, BluetoothDevice, DeviceInformation } from "./bluetooth-utils";
 import { Battery, ChevronDown, ChevronUp, Info, RefreshCw, Trash2, Wifi, WifiOff } from "lucide-react";
 import { Progress } from "@/registry/new-york/ui/progress";
 import {

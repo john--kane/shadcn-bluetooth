@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { BluetoothManager, BluetoothDevice } from "./utils";
+import { BluetoothManager, BluetoothDevice } from "./bluetooth-utils";
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/registry/new-york/ui/tooltip";
 import { Bluetooth, BluetoothOff, BluetoothSearching, BluetoothConnected } from "lucide-react";
 import { cn } from "@/lib/utils";

@@ -5,7 +5,7 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/registry/new-york/ui
 import { ScrollArea } from "@/registry/new-york/ui/scroll-area";
 import { AlertCircle, Battery, Bluetooth, BluetoothConnected, BluetoothOff, Info, RefreshCw, Trash2, Wifi } from "lucide-react";
 import { useEffect, useRef, useState } from "react";
-import { BluetoothDevice, BluetoothManager, Characteristic, Service } from "./utils";
+import { BluetoothDevice, BluetoothManager, Characteristic, Service } from "./bluetooth-utils";
 
 type LogType = "info" | "error" | "data" | "event" | "connection" | "service" | "characteristic" | "connectionError" | "serviceError" | "characteristicError" | "scanError" | "disconnectError" | "removeError";
 

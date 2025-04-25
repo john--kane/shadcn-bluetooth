@@ -6,7 +6,7 @@ import { ScrollArea } from "@/registry/new-york/ui/scroll-area";
 import { Button } from "@/registry/new-york/ui/button";
 import { Input } from "@/registry/new-york/ui/input";
 import { Label } from "@/registry/new-york/ui/label";
-import { BluetoothManager, BluetoothDevice } from "./utils";
+import { BluetoothManager, BluetoothDevice } from "./bluetooth-utils";
 import { RefreshCw } from "lucide-react";
 
 interface Service {
