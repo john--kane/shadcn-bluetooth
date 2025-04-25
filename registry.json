@@ -71,7 +71,7 @@
       "type": "registry:component",
       "title": "Bluetooth Device List",
       "description": "Display a list of bluetooth device information.",
-      "registryDependencies": ["card", "select", "bluetooth-device-card", "bluetooth-toolbar"],
+      "registryDependencies": ["card", "select"],
       "files": [
         {
           "path": "registry/new-york/blocks/bluetooth/bluetooth-device-list.tsx",
@@ -84,6 +84,14 @@
         {
           "path": "registry/new-york/blocks/bluetooth/gatt-services.ts",
           "type": "registry:lib"
+        },
+        {
+          "path": "registry/new-york/blocks/bluetooth/bluetooth-device-card.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "registry/new-york/blocks/bluetooth/bluetooth-toolbar.tsx",
+          "type": "registry:component"
         }
       ]
     },

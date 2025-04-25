@@ -11,8 +11,9 @@ import {
   TooltipProvider,
   TooltipTrigger,
 } from "@/registry/new-york/ui/tooltip";
-import { Accordion, AccordionItem, AccordionTrigger, AccordionContent } from "@radix-ui/react-accordion";
-import { BluetoothStatus } from "./bluetooth-status";
+// import { Accordion, AccordionItem, AccordionTrigger, AccordionContent } from "@radix-ui/react-accordion";
+import { BluetoothStatus } from "@/registry/new-york/blocks/bluetooth/bluetooth-status";
+import { Accordion, AccordionItem, AccordionTrigger, AccordionContent } from "@/registry/new-york/ui/accordion";
 
 interface BluetoothDeviceCardProps {
   device: BluetoothDevice;
