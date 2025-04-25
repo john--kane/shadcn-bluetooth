@@ -68,7 +68,7 @@ A toolbar component for Bluetooth device management. Features include:
 ## Installation
 
 ```bash
-pnpm dlx shadcn add https://shadcn-bluetooth.kaneleuc.com/r/bluetooth-connect-panel.json
+pnpm dlx shadcn add https://shadcn-bluetooth.kaneleuc.com/r/bluetooth-connection-panel.json
 pnpm dlx shadcn add https://shadcn-bluetooth.kaneleuc.com/r/bluetooth-device-card.json
 pnpm dlx shadcn add https://shadcn-bluetooth.kaneleuc.com/r/bluetooth-device-information.json
 pnpm dlx shadcn add https://shadcn-bluetooth.kaneleuc.com/r/bluetooth-device-list.json
