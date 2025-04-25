@@ -13,6 +13,14 @@
         {
           "path": "registry/new-york/blocks/bluetooth/bluetooth-connection-panel.tsx",
           "type": "registry:component"
+        },
+        {
+          "path": "registry/new-york/blocks/bluetooth/utils.ts",
+          "type": "registry:lib"
+        },
+        {
+          "path": "registry/new-york/blocks/bluetooth/gatt-services.ts",
+          "type": "registry:lib"
         }
       ]
     },
@@ -26,6 +34,14 @@
         {
           "path": "registry/new-york/blocks/bluetooth/bluetooth-device-card.tsx",
           "type": "registry:component"
+        },
+        {
+          "path": "registry/new-york/blocks/bluetooth/utils.ts",
+          "type": "registry:lib"
+        },
+        {
+          "path": "registry/new-york/blocks/bluetooth/gatt-services.ts",
+          "type": "registry:lib"
         }
       ]
     },
@@ -39,6 +55,14 @@
         {
           "path": "registry/new-york/blocks/bluetooth/bluetooth-device-information.tsx",
           "type": "registry:component"
+        },
+        {
+          "path": "registry/new-york/blocks/bluetooth/utils.ts",
+          "type": "registry:lib"
+        },
+        {
+          "path": "registry/new-york/blocks/bluetooth/gatt-services.ts",
+          "type": "registry:lib"
         }
       ]
     },
@@ -52,6 +76,14 @@
         {
           "path": "registry/new-york/blocks/bluetooth/bluetooth-device-list.tsx",
           "type": "registry:component"
+        },
+        {
+          "path": "registry/new-york/blocks/bluetooth/utils.ts",
+          "type": "registry:lib"
+        },
+        {
+          "path": "registry/new-york/blocks/bluetooth/gatt-services.ts",
+          "type": "registry:lib"
         }
       ]
     },
@@ -65,6 +97,14 @@
         {
           "path": "registry/new-york/blocks/bluetooth/bluetooth-log-console.tsx",
           "type": "registry:component"
+        },
+        {
+          "path": "registry/new-york/blocks/bluetooth/utils.ts",
+          "type": "registry:lib"
+        },
+        {
+          "path": "registry/new-york/blocks/bluetooth/gatt-services.ts",
+          "type": "registry:lib"
         }
       ]
     },
@@ -79,6 +119,14 @@
         {
           "path": "registry/new-york/blocks/bluetooth/bluetooth-status.tsx",
           "type": "registry:component"
+        },
+        {
+          "path": "registry/new-york/blocks/bluetooth/utils.ts",
+          "type": "registry:lib"
+        },
+        {
+          "path": "registry/new-york/blocks/bluetooth/gatt-services.ts",
+          "type": "registry:lib"
         }
       ]
     },
@@ -92,6 +140,14 @@
         {
           "path": "registry/new-york/blocks/bluetooth/bluetooth-toolbar.tsx",
           "type": "registry:component"
+        },
+        {
+          "path": "registry/new-york/blocks/bluetooth/utils.ts",
+          "type": "registry:lib"
+        },
+        {
+          "path": "registry/new-york/blocks/bluetooth/gatt-services.ts",
+          "type": "registry:lib"
         }
       ]
     }
