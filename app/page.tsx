@@ -12,9 +12,16 @@ export default function Home() {
   return (
     <div className="max-w-3xl mx-auto flex flex-col min-h-svh px-4 py-8 gap-8">
       <header className="flex flex-col gap-1">
-        <h1 className="text-3xl font-bold tracking-tight">Custom Registry</h1>
+        <h1 className="text-3xl font-bold tracking-tight">Shadcn Bluetooth</h1>
         <p className="text-muted-foreground">
-          A custom registry for distributing code using shadcn.
+          A collection of components for building web-based bluetooth apps with shadcn. 
+          <br />
+          Please check out the <a href="https://caniuse.com/web-bluetooth" className="text-blue-500">Can I Use Web Bluetooth</a> for more information on browser support.
+          <br/>
+          <small>
+          Built by <a href="https://github.com/john--kane" className="text-blue-500">John Kane</a>
+          
+          </small>
         </p>
       </header>
       <main className="flex flex-col flex-1 gap-8">

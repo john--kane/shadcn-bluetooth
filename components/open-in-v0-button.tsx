@@ -3,8 +3,14 @@ import { cn } from "@/lib/utils"
 
 export function OpenInV0Button({
   name,
+  baseUrl,
   className,
-}: { name: string } & React.ComponentProps<typeof Button>) {
+}: { 
+  name: string;
+  baseUrl?: string;
+} & React.ComponentProps<typeof Button>) {
+  const url = baseUrl || process.env.NEXT_PUBLIC_BASE_URL;
+  
   return (
     <Button
       aria-label="Open in v0"
@@ -16,7 +22,7 @@ export function OpenInV0Button({
       asChild
     >
       <a
-        href={`https://v0.dev/chat/api/open?url=${process.env.NEXT_PUBLIC_BASE_URL}/r/${name}.json`}
+        href={`https://v0.dev/chat/api/open?url=${url}/r/${name}.json`}
         target="_blank"
         rel="noreferrer"
       >
